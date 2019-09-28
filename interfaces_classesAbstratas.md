@@ -194,3 +194,6 @@ public class Exemplo {
 
 Vejam a classe acima, eu tenho 4 métodos com o mesmo nome, porém a assinatura delas são diferentes, pois os parâmetros são diferentes.
 Portanto está classe acima é válida e este é o conceito de Overload.
+
+## Elementos de um Método
+![](https://github.com/lhamello/locadora-veiculos/blob/master/elementos_metodo.jpg?raw=true)
