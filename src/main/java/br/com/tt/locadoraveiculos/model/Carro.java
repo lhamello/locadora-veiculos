@@ -11,8 +11,7 @@ public class Carro extends Veiculo {
 	private Cambio cambio;
 	private NumeroPortas numeroPortas;
 
-	public Carro(String placa, String marca, String modelo, 
-			float quilometragem, TipoCombustivel tipoCombustivel,
+	public Carro(String placa, String marca, String modelo, float quilometragem, TipoCombustivel tipoCombustivel,
 			TipoCarro tipo, Cambio cambio, NumeroPortas numeroPortas) {
 		// chamada para o construtor da classe pai
 		super(placa, marca, modelo, quilometragem, tipoCombustivel);
@@ -21,19 +20,17 @@ public class Carro extends Veiculo {
 		this.cambio = cambio;
 		this.numeroPortas = numeroPortas;
 	}
-	
+
 	@Override
-	  public String toString() {
-	    return String.format("Veiculo#Carro[placa=%s,marca=%s,modelo=%s,"
-	    		+ "quilometragem=%.1f,tipoCombustivel=%s,tipo=%s,cambio=%s,"
-	    		+ "numeroPortas=%s]", 
-	        placa, 
-	        marca, 
-	        modelo, 
-	        quilometragem, 
-	        tipoCombustivel, 
-	        tipo, 
-	        cambio, 
-	        numeroPortas);
-	  }
+	public Double getValorKmRodado() {
+		return tipo.getValorKmRodado();
+	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"Veiculo#Carro[placa=%s,marca=%s,modelo=%s,"
+						+ "quilometragem=%.1f,tipoCombustivel=%s,tipo=%s,cambio=%s," + "numeroPortas=%s]",
+				placa, marca, modelo, quilometragem, tipoCombustivel, tipo, cambio, numeroPortas);
+	}
 }

@@ -18,4 +18,14 @@ public abstract class Veiculo {
 		this.quilometragem = quilometragem;
 		this.tipoCombustivel = tipoCombustivel;
 	}
+
+	public void atualizarQuilometragem(Float kmAtualVeiculo) {
+		this.quilometragem = kmAtualVeiculo;
+	}
+
+	public float getQuilometragem() {
+		return quilometragem;
+	}
+
+	abstract Double getValorKmRodado();
 }

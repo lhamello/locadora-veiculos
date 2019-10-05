@@ -19,7 +19,8 @@ public class TelaPrincipal extends Tela {
 				tela.apresentarTela();
 				break;
 			case 3:
-				System.out.println("ir para Tela Locações");
+				tela = new TelaLocacao();
+				tela.apresentarTela();
 				break;
 			case 0:
 				scanner.close();

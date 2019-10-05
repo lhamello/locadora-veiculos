@@ -16,15 +16,14 @@ public class Moto extends Veiculo {
 	}
 
 	@Override
+	public Double getValorKmRodado() {
+		return cilindrada.getValorKmRodado();
+	}
+
+	@Override
 	public String toString() {
 		return String.format(
-				"Veiculo#Moto[placa=%s,marca=%s,modelo=%s,quilometragem=%.1f,"
-				+ "tipoCombustivel=%s,cilindrada=%s]", 
-				placa,
-				marca, 
-				modelo, 
-				quilometragem, 
-				tipoCombustivel, 
-				cilindrada);
+				"Veiculo#Moto[placa=%s,marca=%s,modelo=%s,quilometragem=%.1f," + "tipoCombustivel=%s,cilindrada=%s]",
+				placa, marca, modelo, quilometragem, tipoCombustivel, cilindrada);
 	}
 }

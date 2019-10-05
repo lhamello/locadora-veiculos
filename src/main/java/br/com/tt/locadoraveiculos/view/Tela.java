@@ -1,6 +1,5 @@
 package br.com.tt.locadoraveiculos.view;
 
-import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -34,17 +33,7 @@ public abstract class Tela {
 		return numero;
 	}
 	
-	protected double solicitarNumeroDouble() {
-		// TODO:
-		return 0;
-	}
-	
 	protected String solicitarTexto() {
 		return scanner.nextLine();
-	}
-	
-	protected LocalDate solicitarData() {
-		// TODO:
-		return null;
 	}
 }
