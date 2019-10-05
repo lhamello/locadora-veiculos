@@ -11,12 +11,12 @@ public class TelaPrincipal extends Tela {
 			
 			switch (opcaoUsuario) {
 			case 1:
-//				System.out.println("ir para Tela Veículos");
 				tela = new TelaVeiculo();
 				tela.apresentarTela();
 				break;
 			case 2:
-				System.out.println("ir para Tela Clientes");
+				tela = new TelaCliente();
+				tela.apresentarTela();
 				break;
 			case 3:
 				System.out.println("ir para Tela Locações");

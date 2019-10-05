@@ -6,7 +6,10 @@ import java.util.List;
 
 import br.com.tt.locadoraveiculos.model.Caminhao;
 import br.com.tt.locadoraveiculos.model.Carro;
+import br.com.tt.locadoraveiculos.model.Cliente;
 import br.com.tt.locadoraveiculos.model.Moto;
+import br.com.tt.locadoraveiculos.model.PessoaFisica;
+import br.com.tt.locadoraveiculos.model.PessoaJuridica;
 import br.com.tt.locadoraveiculos.model.Veiculo;
 import br.com.tt.locadoraveiculos.model.enums.Cambio;
 import br.com.tt.locadoraveiculos.model.enums.Cilindrada;
@@ -14,6 +17,7 @@ import br.com.tt.locadoraveiculos.model.enums.NumeroPortas;
 import br.com.tt.locadoraveiculos.model.enums.TipoCaminhao;
 import br.com.tt.locadoraveiculos.model.enums.TipoCarro;
 import br.com.tt.locadoraveiculos.model.enums.TipoCombustivel;
+import br.com.tt.locadoraveiculos.model.enums.TipoDocumento;
 
 // Classe Singleton, que tem somente uma única instância.
 // Representa o banco de dados em memória de nossa aplicação
@@ -22,6 +26,8 @@ public class BancoDados {
 	// Singleton item 1
 	// instância da própria classe
 	private static BancoDados unicaInstancia;
+
+	private List<Cliente> clientes;
 	private List<Veiculo> veiculos;
 
 	// Singleton item 2
@@ -29,14 +35,15 @@ public class BancoDados {
 	// fora da própria classe
 	private BancoDados() {
 		this.veiculos = new LinkedList<>(Arrays.asList(
-		        new Carro("AAA1234", "PEUGEOT", "203", 0f, 
-		        		TipoCombustivel.FLEX, TipoCarro.HATCH, 
-		        		Cambio.MANUAL, NumeroPortas.QUATRO_PORTAS),
-		        new Caminhao("AAA1235", "VOLVO", "V1", 0, 
-		        		TipoCombustivel.DIESEL, TipoCaminhao.TRES_QUARTOS, 
-		        		Cambio.AUTOMATICO),
-		        new Moto("AAA1236", "Kawasaki", "Ninja", 0, 
-		        		TipoCombustivel.GASOLINA, Cilindrada.CC1000)));
+				new Carro("AAA1234", "PEUGEOT", "203", 0f, TipoCombustivel.FLEX, TipoCarro.HATCH, Cambio.MANUAL,
+						NumeroPortas.QUATRO_PORTAS),
+				new Caminhao("AAA1235", "VOLVO", "V1", 0, TipoCombustivel.DIESEL, TipoCaminhao.TRES_QUARTOS,
+						Cambio.AUTOMATICO),
+				new Moto("AAA1236", "Kawasaki", "Ninja", 0, TipoCombustivel.GASOLINA, Cilindrada.CC1000)));
+
+		this.clientes = new LinkedList<>(
+				Arrays.asList(new PessoaFisica("Fulano da Silva", TipoDocumento.CPF, "001.002.003-45"),
+						new PessoaJuridica("Empresa Teste", "12.345.678/0001-12")));
 	}
 
 	// Singleton item 3
@@ -56,5 +63,13 @@ public class BancoDados {
 
 	public List<Veiculo> listarTodosVeiculos() {
 		return veiculos;
+	}
+
+	public void adicionarCliente(Cliente cliente) {
+		clientes.add(cliente);
+	}
+
+	public List<Cliente> listarTodosClientes() {
+		return clientes;
 	}
 }
